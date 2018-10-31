@@ -1,6 +1,12 @@
-<p>
-  servers works!
-</p>
-<button class="btn btn-secondary" [disabled]="!addNewServer" >Add a server</button>
+<label>Custom server name</label>
+<!--$event sends the data emitted by this event-->
+<!--<input type="text" class="form-control" (input)="onUpdateServerName($event)">-->
+<!--Two way binding-->
+<input type="text" class="form-control" [(ngModel)]="serverName">
+<p>Your new server name is {{serverName}}</p>
+<p>servers works!</p>
+<button class="btn btn-secondary" [disabled]="!addNewServer" (click)="onCreateServer()">Add a server</button>
+<p [innerText]="addNewServer">{{addNewServer}}</p>
+<p>{{serverCreatedStatus}}</p>
 <app-server></app-server>
 <app-server></app-server>
