@@ -8,5 +8,10 @@
 <button class="btn btn-secondary" [disabled]="!addNewServer" (click)="onCreateServer()">Add a server</button>
 <p [innerText]="addNewServer">{{addNewServer}}</p>
 <p>{{serverCreatedStatus}}</p>
+<p *ngIf="serverCreation; else noServer">This server was just created called {{serverName}}</p>
+<!--Alternative way to use ngIf / else as an alternative to !ngIf-->
+<ng-template #noServer>
+  <p>Nothing has been created yet.</p>
+</ng-template>
 <app-server></app-server>
 <app-server></app-server>
